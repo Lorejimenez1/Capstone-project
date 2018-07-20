@@ -15,7 +15,9 @@ app.get("/forums", (req, res) => {
     res.sendFile(__dirname + "/views/forums.html");
 });
 
-
+app.get("/news", (req, res) => {
+    res.sendFile(__dirname + "/views/news.html");
+});
 
 if (require.main === module) {
     app.listen(process.env.PORT || 8080, function() {
