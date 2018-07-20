@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background: ghostwhite;
+    font-family: Maven Pro;
+    background: url("https://www.hdwallpaperslife.com/wp-content/uploads/2018/05/fortnite_dark_voyager_4k.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nav-top {
+    width: 80%;
+    margin: 0 auto;
+}
+body header {
+    background: #282828;
+}
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.nav-logo {
+    padding: 10px 0;
+    float: left;
+    width: 350px;
+    height: 80px;
+}
+nav {
+    float: right;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav li {
+    position: relative;
+    display: inline-block;
+    margin-left: 50px;
+    padding-top: 35px;
+}
+
+nav a {
+    color: #DCDCDC;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+
+}
+nav a:hover {
+    color: #fff;
+}
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 0px;
+    background-color: #F0F0F0;
+    position: absolute;
+    top: 0;
+}
+nav a:hover::before {
+    width: 100%;
+}
+ main {
+ 
+}
+
+legend {
+  text-align: center;
+  position: relative;
+  font-size: 30px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+fieldset { 
+  margin: 0;
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#email, #userPassword, #signup_button, #userName {
+  display: block;
+  height: auto;
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  border: 2px solid #D3D3D3;
+  border-radius: 3px;
+  background: #fcfcfc;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 10px auto 20px;
+  font-weight: 900;
+  color: #000000;
+}
+
+form  {
+  color: black;
+  background-color: whitesmoke;
+  margin: 0 auto;
+  font-weight: 900;
+  border: solid 1px black;
+  border-radius: 5px;
+} 
+.img-tweet {
+    width: 300px;
+    height: 275px;
+}
+.col-6 h1{
+    padding-bottom: 50px;
+    background: #fff;
+    opacity: .6;
+    display: block;
+    font-size: 55px;
+    font-weight: 900;
+}
+#Welcome-container p {
+     font-size: 27px; 
+     font-weight: 900;
+}
+#Welcome-container {
+  font-weight: 900;
+}
+
+.mySlides {
+    border: 1px solid black;
+    height: 380px;
+    width: 100%;
+}
+
+.row {
+    max-width: 1000px;
+    padding-top: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
+
+
+/* Clearfix */
+.row::before,
+.row::after {
+    display: table;
+    content: '';
+}
+
+.row::after {
+    clear: both;
+}
+
+.col-3, .col-4, .col-6, .col-12 {
+    float: left;
+
+    /* Gutters:
+     * Each column is padded by half-a-gutter on each side,
+     *
+     * Half a gutter is 10px, 10/960 (context) = 1.041666%
+     *
+     */
+    padding-left: 1.04166666%;
+    padding-right: 1.04166666%;
+}
+
+/* Mobile defaults */
+.col-3, .col-4, .col-6, .col-12 {
+    width: 100%;
+}
+.col-6 {
+    
+}
+/* Non-mobile, grid */
+@media only screen and (min-width: 640px) {
+    /* 3 columns, 3/12 in % */
+    .col-3 {
+        width: 25%;
+    }
+
+    /* 4 columns */
+    .col-4 {
+        width: 33.3%
+    }
+
+    /* 6 columns */
+    .col-6 {
+
+        width: 50%
+    }
+    .col-12 {
+        width: 100%;
+    }
+}
+
+.col-12 {
+    text-align: center;
+}

@@ -4,8 +4,18 @@ const app = express();
 app.use(express.static('public'));
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(__dirname + "/views/index.html");
 });
+
+app.get("/about", (req, res) => {
+    res.sendFile(__dirname + "/views/about.html");
+});
+
+app.get("/forums", (req, res) => {
+    res.sendFile(__dirname + "/views/forums.html");
+});
+
+
 
 if (require.main === module) {
     app.listen(process.env.PORT || 8080, function() {

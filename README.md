@@ -1,3 +1,3 @@
 # Fortnite Comp Community
 
-A node express app create dby Lorenzo Jimenez
+A node express app create by lorenzo jimenez
