@@ -7,51 +7,33 @@
         <meta name="description" content="Competitive fortnite web app">
         <link href="index.css" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Metrophobic" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         
     </head>    
     <body>
         <header>
-            <div class="nav-top">
-                <img src="https://www.mmogames.com/wp-content/uploads/2018/05/fortnite-pro-am-logo-659x163.png" alt ="fortnite logo" class="nav-logo">
-
-                <nav>
-                    <ul>
-                        <li><a href="/news">Home</a></li>
-                        <li><a href="">Pro-settings</a></li>
-                        <li><a href="">Forums</a></li>
-                        <li><a href="">News</a></li>
-                    </ul>
-                </nav>
-
+            <div class="topnav" id="myTopnav">
+                <img src="https://d23wybgr07mqxm.cloudfront.net/wp-content/uploads/2018/03/15220141/fortnite-update1.png" class="nav-logo">
+                <a href="/" class="active">Home</a>
+                <a href="/news">News</a>
+                <a href="/settings">Pro-settings</a>
+                <a href="/forums">Find Players</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i></a>
             </div>
         </header>
         <main>
             <div class="row">
                 <div class="col-6" id="Welcome-container">
-                    <h1>Welcome to FCC</h1>
+                    <h1>Welcome to Fortnite Prime</h1>
                     
-                      <img class="mySlides" src="https://static.invenglobal.com/upload/image/2018/05/21/i1526924493005816.jpeg">
-                      <img class="mySlides" src="https://thetopbreakingnews.com/wp-content/uploads/2018/06/972988.jpg">
-                      <img class="mySlides" src="https://static.altchar.com/live/media/images/950x633_ct/10178_epic_games_2132377715d26a49625d4fd7f60d5def.jpg">
+                      <img class="mySlides" src="https://pbs.twimg.com/profile_images/965664638263267329/WxovMAia_400x400.jpg">
+                      <img class="mySlides" src="https://i.ytimg.com/vi/hPBuho_aoGA/maxresdefault_live.jpg">
+                      <img class="mySlides" src="http://media.comicbook.com/2018/07/fortnite-season-5-1121355.jpeg">
                     
 
-                    <script>
-                    var myIndex = 0;
-                    carousel();
 
-                    function carousel() {
-                        var i;
-                        var x = document.getElementsByClassName("mySlides");
-                        for (i = 0; i < x.length; i++) {
-                           x[i].style.display = "none";  
-                        }
-                        myIndex++;
-                        if (myIndex > x.length) {myIndex = 1}    
-                        x[myIndex-1].style.display = "block";  
-                        setTimeout(carousel, 2000); // Change image every 2 seconds
-                    }
-                    </script>
                 </div>
                 <div class="col-6">
                         <form role="form" action="/signup/" method="post">
@@ -80,7 +62,25 @@
                 </div>
             </div>
         </main>
+        <script >
+            var myIndex = 0;
+            carousel();
 
+            function carousel() {
+
+
+
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) {myIndex = 1}
+                x[myIndex-1].style.display = "block";
+                setTimeout(carousel, 2000); // Change image every 2 seconds
+            }
+        </script>
     </body>
 
 </html>

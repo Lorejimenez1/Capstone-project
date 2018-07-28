@@ -9,61 +9,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.nav-top {
-    width: 80%;
-    margin: 0 auto;
-}
 body header {
     background: #282828;
 }
-header::after {
-    content: '';
-    display: table;
-    clear: both;
-}
-.nav-logo {
-    padding: 10px 0;
-    float: left;
-    width: 350px;
-    height: 80px;
-}
-nav {
-    float: right;
-}
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-nav li {
-    position: relative;
-    display: inline-block;
-    margin-left: 50px;
-    padding-top: 35px;
-}
 
-nav a {
-    color: #DCDCDC;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 500;
-
-}
-nav a:hover {
-    color: #fff;
-}
-nav a::before {
-    content: '';
-    display: block;
-    height: 5px;
-    width: 0px;
-    background-color: #F0F0F0;
-    position: absolute;
-    top: 0;
-}
-nav a:hover::before {
-    width: 100%;
-}
  main {
  
 }
@@ -112,9 +61,10 @@ form  {
     height: 275px;
 }
 .col-6 h1{
-    padding-bottom: 50px;
+    padding-top: 0;
+    padding-bottom: 2px;
     background: #fff;
-    opacity: .6;
+    opacity: .8;
     display: block;
     font-size: 55px;
     font-weight: 900;
@@ -129,7 +79,7 @@ form  {
 
 .mySlides {
     border: 1px solid black;
-    height: 380px;
+    height: 375px;
     width: 100%;
 }
 
@@ -182,6 +132,7 @@ form  {
 
     /* 4 columns */
     .col-4 {
+        height: 300px;
         width: 33.3%
     }
 
@@ -206,10 +157,7 @@ p {
     font-weight: 900;
     font-size:30px;
 }
-.nav-top {
-    width: 80%;
-    margin: 0 auto;
-}
+
 body header {
     background: #282828;
 }
@@ -219,48 +167,18 @@ header::after {
     clear: both;
 }
 .nav-logo {
-    padding: 10px 0;
     float: left;
-    width: 350px;
-    height: 80px;
-}
-nav {
-    float: right;
-}
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-nav li {
-    position: relative;
-    display: inline-block;
-    margin-left: 50px;
-    padding-top: 35px;
+    width: 70px;
+    height: 65px;
+    padding: 14px 16px;;
 }
 
-nav a {
-    color: #DCDCDC;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 500;
+#news-tiitle {
+    Background: white;
+    opacity: .8;
+    border: 2px solid darkgray;
+}
 
-}
-nav a:hover {
-    color: #fff;
-}
-nav a::before {
-    content: '';
-    display: block;
-    height: 5px;
-    width: 0px;
-    background-color: #F0F0F0;
-    position: absolute;
-    top: 0;
-}
-nav a:hover::before {
-    width: 100%;
-}
 
 table, th, td {
     border: 1px solid black;
@@ -268,4 +186,128 @@ table, th, td {
 }
 #grid {
     background: white;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 23px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+
+.topnav .icon {
+    display: none;
+}
+
+.card {
+    height: 100%;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+.card:hover {
+    cursor: pointer;
+}
+.card-image {
+    border-bottom: 1px solid black;
+    height: 45%;
+    width: 100%;
+}
+
+.card-content {
+    background-color: #64FFDA;
+    height: 54%;
+    padding: 10px;
+}
+.card-content a {
+    margin: 0.5em 0;
+}
+.card-content h3 {
+    display: block;
+    height: 90%;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 10px;
+    text-align: center;
+}
+p {
+    font-size: 14px;
+    font-weight: 800;
+    font-style: italic;
+    text-align: center;
+    padding-bottom: 0;
+    margin: 0;
+}
+main {
+    padding-left: 150px;
+    padding-right: 150px;
+}
+.col-4 {
+    background: white;
+    height: 400px;
+
+}
+.col-12 {
+    background-color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
+section {
+    border: 1px solid black;
+    display: block;
+    height: 200px;
+    width: 100%;
+    background-color: white;
+    opacity: .9;
+}
+#js-new-player {
+    display: inline-block;
+    width: 50%;
+}
+.js-post-results h2 {
+    padding-top: 0;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+.js-post-results p {
+    text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+        float: right;
+        display: block;
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
 }
