@@ -198,3 +198,74 @@ form  {
 .col-12 {
     text-align: center;
 }
+
+.col-12 h1 {
+    text-align: center;
+}
+p {
+    font-weight: 900;
+    font-size:30px;
+}
+.nav-top {
+    width: 80%;
+    margin: 0 auto;
+}
+body header {
+    background: #282828;
+}
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.nav-logo {
+    padding: 10px 0;
+    float: left;
+    width: 350px;
+    height: 80px;
+}
+nav {
+    float: right;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav li {
+    position: relative;
+    display: inline-block;
+    margin-left: 50px;
+    padding-top: 35px;
+}
+
+nav a {
+    color: #DCDCDC;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+
+}
+nav a:hover {
+    color: #fff;
+}
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 0px;
+    background-color: #F0F0F0;
+    position: absolute;
+    top: 0;
+}
+nav a:hover::before {
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: left;
+}
+#grid {
+    background: white;
+}
