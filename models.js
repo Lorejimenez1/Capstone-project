@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-var authorSchema = mongoose.Schema({
+const authorSchema = mongoose.Schema({
     firstName: 'string',
     lastName: 'string',
     userName: {
@@ -9,6 +9,13 @@ var authorSchema = mongoose.Schema({
         unique: true
     }
 });
+
+const newsSchema = mongoose.Schema ({
+    title: 'string',
+    url: 'string',
+    imageURL: 'string',
+    source: 'string'
+})
 
 const proSettingsSchema = mongoose.Schema ({
     player: 'string',
@@ -62,8 +69,9 @@ proSettingsSchema.methods.serialize = function () {
 
 };
 
-var Author = mongoose.model('Author', authorSchema);
+const News = mongoose.model('News', newsSchema);
+const Author = mongoose.model('Author', authorSchema);
 const PlayerPost = mongoose.model('PlayerPost', playersPostSchema);
 const Settings = mongoose.model('Settings', proSettingsSchema);
 
-module.exports = {Author, PlayerPost, Settings };
+module.exports = {Author, PlayerPost, Settings, News };

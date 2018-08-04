@@ -1,35 +1,5 @@
-var MOCK_STATUS_UPDATES = {
-    "statusUpdates": [
-        {
-            "id": "1111111",
-            "text": "Can't believe how much fun I'm having.",
-            "userName": "aaaaaa",
-            "epicID": "John Doe",
-            "publishedAt": 1470016976609
-        },
-        {
-            "id": "1111111",
-            "text": "Can't believe how much fun I'm having.",
-            "userName": "aaaaaa",
-            "epicID": "John Doe",
-            "publishedAt": 1470016976609
-        },
-        {
-            "id": "1111111",
-            "text": "Can't believe how much fun I'm having.",
-            "userName": "aaaaaa",
-            "epicID": "John Doe",
-            "publishedAt": 1470016976609
-        },
-        {
-            "id": "1111111",
-            "text": "Can't believe how much fun I'm having.",
-            "userName": "aaaaaa",
-            "epicID": "John Doe",
-            "publishedAt": 1470016976609
-        }
-    ]
-};
+const NEWS_URL = "localhost:8080/news-posts"
+
 
 
 const news_updates = {
@@ -58,21 +28,21 @@ const news_updates = {
     ]
 };
 
-function getRecentStatusUpdates(callbackFn) {
-    setTimeout(function(){ callbackFn(news_updates)}, 100);
+function getRecentStatusUpdates(callback) {
+    setTimeout(function(){ callbackFn(MOCK_STATUS_UPDATES)}, 100);
 }
 
 // this function stays the same when we connect
 // to real API later
 function displayStatusUpdates(data) {
-    for (index in data.newsPosts) {
+    for (index in data) {
        $('#js-news-results').append(
         `  	<div class=col-4>
   		<div class="card w3-hover-grayscale">
   			<img class="card-image" alt=""
-  			src="${data.newsPosts[index].imageUrl}">
+  			src="${data[index].imageUrl}">
   			<div class="card-content">
-  				<h3><a href="${data.newsPosts[index].title}" target="_blank">${data.newsPosts[index].title}</a>
+  				<h3><a href="${data[index].url}" target="_blank">${data[index].title}</a>
   				</h3>
 				</div>
 			</div>		
@@ -137,6 +107,8 @@ function displayFreePlayers(data) {
             );
     }
 }
+
+
 
 function getAndDisplayFreePlayers() {
     (getAvailablePlayers(displayFreePlayers))
