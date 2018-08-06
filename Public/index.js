@@ -114,6 +114,8 @@ function getAndDisplayFreePlayers() {
     (getAvailablePlayers(displayFreePlayers))
 }
 
+function watch signup()
+
 $(function() {
     getAndDisplayStatusUpdates();
     getAndDisplayFreePlayers();

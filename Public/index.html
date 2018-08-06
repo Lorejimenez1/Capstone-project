@@ -15,7 +15,7 @@
         <header>
             <div class="topnav" id="myTopnav">
                 <img src="https://d23wybgr07mqxm.cloudfront.net/wp-content/uploads/2018/03/15220141/fortnite-update1.png" class="nav-logo">
-                <a href="/" class="active">Home</a>
+                <a href="/login-page" class="active">Login</a>
                 <a href="/news">News</a>
                 <a href="/settings">Pro-settings</a>
                 <a href="/forums">Find Players</a>
@@ -35,19 +35,19 @@
 
 
                 </div>
-                <div class="col-6">
-                        <form role="form" action="/signup/" method="post">
+                <div class="col-6" id="signup_form">
+                        <form role="form" action="/api/users" method="post">
                             <fieldset name="contact-info">
                                 <legend>Sign up </legend>
 
-                                <label for="userName">Full Name</label>
-                                <input placeholder="Jimmer fer" id="userName" type="name">
+                                <label for="username">username</label>
+                                <input name="username"placeholder="Jimmer fer" id="userName" type="text">
 
-                                <label for="email">Email</label>
-                                <input type="email" placeholder="Lor@bar.com" name='email' id='email' />
+                                <label for="epicGamesID">EpicGamesID</label>
+                                <input name="epicGamesID"placeholder="Randomgamer123" id="epicGamesID" type="text">
 
                                 <label for="userPassword">Password</label>
-                                <input placeholder="1234passw0rd" id="userPassword" type="password">
+                                <input name="password"placeholder="1234passw0rd" id="userPassword" type="password">
 
                                 <button id="signup_button" type='submit'>Sign up</button>
 

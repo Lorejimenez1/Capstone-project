@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-const {News} = require('./models')
+const {News} = require('../models/userModel')
 
 router.get('/', (req, res) => {
     News.find()
@@ -54,6 +54,5 @@ router.post('/', (req, res)=>{
         });
 
 });
-
-
+module.exports = router;
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Competitive fortnite web app">
+    <link href="https://fonts.googleapis.com/css?family=Metrophobic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+
+    <title>News page</title>
+</head>
+<body>
+    <header>
+        <div class="topnav" id="myTopnav">
+            <img src="https://pbs.twimg.com/media/DS-XbyJW0AAX_Dk.png" class="nav-logo">
+            <a href="/" class="active">Home</a>
+            <a href="/news">News</a>
+            <a href="/settings">Pro-Settings</a>
+            <a href="/forums">Find Players</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i></a>
+
+        </div>
+    </header>
+    <main role="main" >
+        <div class="col-12" id="news-tiitle">
+            <h1>Fortnite Prime </h1>
+            <h2>Just a bunch of competitive players</h2>
+        </div>
+        <form action="action_page.php">
+            <div class="imgcontainer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK3tQeRKhLk_E6dVWnKwDq9IsxPO3E54m4JoxbeKB81EAHFE8b" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+
+
+
+    </main>
+
+<script src="index.js"></script>
+
+</body>
+</html>

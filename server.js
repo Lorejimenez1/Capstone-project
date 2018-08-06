@@ -2,77 +2,63 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const passport = require('passport');
 
-const package = require('./package.json');
+require('dotenv').config()
+
+
 const { DATABASE_URL, PORT } = require('./config');
 const newsRouter = require('./routers/newsRouter');
 const settingsRouter = require('./routers/settingsRouter');
-const adminsRouter = require('./routers/adminsRouter');
+const userRouter = require('./routers/usersRouter');
+//const playerPostsRouter = require('./routers/playerPostsRouter')
+const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 
 
 mongoose.Promise = global.Promise;
 const app = express();
 
 app.use(morgan('common'));
-app.use(express.static('public'));
-app.use(express.static('views'));
 app.use(express.json());
 
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE');
+    if (req.method === 'OPTIONS') {
+        return res.send(204);
+    }
+    next();
+});
 
+passport.use(localStrategy);
+
+app.use(express.static('public'));
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/views/index.html");
+  res.sendFile(__dirname + "/public/index.html");
 });
 app.get("/about", (req, res) => {
-    res.sendFile(__dirname + "/views/about.html");
+    res.sendFile(__dirname + "/public/about.html");
 });
 app.get("/forums", (req, res) => {
-    res.sendFile(__dirname + "/views/forums.html");
+    res.sendFile(__dirname + "/public/forums.html");
 });
 app.get("/news", (req, res) => {
-    res.sendFile(__dirname + "/views/news.html");
+    res.sendFile(__dirname + "/public/news.html");
 })
 app.get("/settings", (req, res) => {
-    res.sendFile(__dirname + "/views/pro-settings.html");
+    res.sendFile(__dirname + "/public/pro-settings.html");
 });
-app.get("/login", (req, res) => {
-    res.sedfile(__dirname + "/views/login.html")
+app.get("/login-page", (req, res) => {
+    res.sendFile(__dirname + "/public/login.html")
 })
 
-
-
-
-
-app.post('/pro-settings', (req, res) => {
-    const requiredFields = ['player', 'mouse', 'sensitivity', 'dpi', 'ads', 'scopeSensitivity', 'keyboard'];
-    for (let i = 0; i < requiredFields.length; i++) {
-        const field = requiredFields[i];
-        if (!(field in req.body)) {
-            const message = `Missing \`${field}\` in request body`;
-            console.error(message);
-            return res.status(400).send(message);
-        }
-    }
-
-    Settings
-        .create({
-            player: req.body.player,
-            mouse: req.body.mouse,
-            sensitivity: req.body.sensitivity,
-            dpi: req.body.dpi,
-            ads: req.body.ads,
-            ScopeSensitivity:  req.body.ScopeSensitivity,
-            keyboard: req.body.keyboard
-        })
-        .then(settings => res.status(201).json(settings.serialize()))
-        .catch(err => {
-            console.error(err);
-            res.status(500).json({ error: 'Something went wrong' });
-        });
-
-});
-
-
+app.use('/news', newsRouter);
+app.use('/pro-settings', settingsRouter);
+//app.use('/player-posts', playerPostsRouter);
+app.use('/api/users', userRouter);
+app.use('api/login', userRouter);
 
 let server;
 
@@ -112,4 +98,4 @@ function closeServer() {
 if (require.main === module) {
     runServer(DATABASE_URL).catch(err => console.error(err));
 }
-module.exports = { runServer, app, closeServer };
+module.exports = { app, runServer, closeServer };

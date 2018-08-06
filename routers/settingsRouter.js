@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-const {Settings} = require('./models')
+const {Settings} = require('../models/settingsModel')
 
-app.get('/pro-settings', (req, res) => {
+router.get('/pro-settings', (req, res) => {
     Settings.find()
         .then(players => {
             res.json(players.map(player => player.serialize()));
@@ -45,3 +45,4 @@ router.post('/pro-settings', (req, res) => {
         });
 
 });
+module.exports = router;

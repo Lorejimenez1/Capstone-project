@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-const {News} = require('./models')
+const {News} = require('../models/playerPostModel')
 
 router.post('/player-posts', (req, res) => {
     const requiredFields = ['userName', 'text'];
@@ -28,3 +28,5 @@ router.post('/player-posts', (req, res) => {
             res.status(500).json({message: 'Internal server error'});
         });
 });
+
+module.exports = router;
