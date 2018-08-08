@@ -4,10 +4,21 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-const {News} = require('../models/playerPostModel')
+const {PlayerPost} = require('../models/playerPostModel')
 
-router.post('/player-posts', (req, res) => {
-    const requiredFields = ['userName', 'text'];
+router.get('/', (req, res) => {
+        PlayerPost
+        .find()
+        .then(posts => {
+            res.json(posts.map(post => post.serialize()));
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).json({ error: 'something went terribly wrong' });
+        });
+});
+router.post('/', (req, res) => {
+    const requiredFields = ['username', 'content'];
     for (let i=0; i<requiredFields.length; i++) {
         const field = requiredFields[i];
         if (!(field in req.body)) {
@@ -18,8 +29,8 @@ router.post('/player-posts', (req, res) => {
     }
     PlayerPost
         .create({
-            userName: req.body.name,
-            text: req.body.text,
+            username: req.body.username,
+            content: req.body.content,
         })
         .then(
             post => res.status(201).json(post.serialize()))

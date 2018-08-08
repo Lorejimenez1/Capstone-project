@@ -1,8 +1,21 @@
 const NEWS_URL = "localhost:8080/news-posts"
+const FORUMS_URL = "/player-posts"
 
 
 
-const news_updates = {
+const playerEntryTemplate = (
+
+    '<p><span class="player-post js-player-post"></span></p>' +
+    '<div class="shopping-item-controls">'+
+    '<p class="user-name">By <%= user.username %></p>' +
+    '<button class="js-shopping-item-delete">' +
+    '<span class="button-label">delete</span>' +
+    '</button>' +
+    '</div>'
+
+
+);
+const MOCK_STATUS_UPDATES = {
 "newsPosts": [
     {
     "id": "111",
@@ -28,7 +41,7 @@ const news_updates = {
     ]
 };
 
-function getRecentStatusUpdates(callback) {
+function getRecentStatusUpdates(callbackFn) {
     setTimeout(function(){ callbackFn(MOCK_STATUS_UPDATES)}, 100);
 }
 
@@ -91,32 +104,51 @@ function getAvailablePlayers(callbackFn) {
     setTimeout(function(){ callbackFn(MOCK_STATUS_UPDATES)}, 100);
 }
 
-function displayFreePlayers(data) {
-    for (index in data.statusUpdates) {
-        $('.js-post-results').append(
-            `
-                <div class="row">
-                    <div class="col-12">
-                       <h2>${data.statusUpdates[index].userName}</h2>
-                       <p>${data.statusUpdates[index].text}</p>
-                    </div>
-        
-                </div>
-            
-        `
-            );
-    }
-}
-
-
-
 function getAndDisplayFreePlayers() {
-    (getAvailablePlayers(displayFreePlayers))
+    console.log('Retrieving  posts');
+    $.getJSON(FORUMS_URL, function(items) {
+        console.log('Rendering shopping list');
+        var itemElements = items.map(function(item) {
+            var element = $(playerEntryTemplate);
+            element.attr('id', item.id);
+            var itemName = element.find('.js-player-post');
+            itemName.text(item.content);
+            return element
+        });
+        $('.js-post-results').html(itemElements);
+
+
+            ;
+    });
 }
 
-function watch signup()
+function addPlayerPost(post) {
+    console.log('Adding : ' + post);
+    $.ajax({
+        method: 'POST',
+        url: FORUMS_URL,
+        data: JSON.stringify(item),
+        success: function(data) {
+            getAndDisplayFreePlayers();
+        },
+        dataType: 'json',
+        contentType: 'application/json'
+    });
+}
+
+function handlePlayerPostAdd() {
+
+    $('#js-player-entry-form').submit(function (e) {
+        e.preventDefault();
+        addPlayerPost({
+            content: $(e.currentTarget).find('#js-new-player').val(),
+            username: user.username
+        });
+    });
+}
 
 $(function() {
     getAndDisplayStatusUpdates();
     getAndDisplayFreePlayers();
-})
+    handlePlayerPostAdd();
+});

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Competitive fortnite web app">
+    <link href="https://fonts.googleapis.com/css?family=Metrophobic" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="./Public/index.css" rel="stylesheet" type="text/css" />
+    <title>New</title>
+</head>
+<body>
+    <header>
+        <div class="topnav" id="myTopnav">
+            <img src="https://d23wybgr07mqxm.cloudfront.net/wp-content/uploads/2018/03/15220141/fortnite-update1.png" class="nav-logo">
+            <a href="/login-page" class="active">Login</a>
+            <a href="/news">News</a>
+            <a href="/settings">Pro-settings</a>
+            <a href="/forums">Find Players</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i></a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+
+            <div class="page-header text-center">
+                <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+                <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+            </div>
+
+            <div class="row">
+
+                <!-- LOCAL INFORMATION -->
+                <div class="col-sm-6">
+                    <div class="well">
+                        <h3><span class="fa fa-user"></span> Local</h3>
+
+                        <p>
+                            <strong>id</strong>: <%= user._id %><br>
+                            <strong>email</strong>: <%= user.username %><br>
+                            <strong>password</strong>: <%= user.password %>
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </main>
+
+
+<script src="../Public/index.js"></script>
+
+</body>
+</html>

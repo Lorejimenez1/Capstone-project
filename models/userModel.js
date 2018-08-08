@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-const UserSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
     username: {
         type: String,
         required: true,
@@ -13,24 +13,23 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    epicGamesID: {type: String},
 
 });
 
-UserSchema.methods.serialize = function() {
+userSchema.methods.serialize = function() {
     return {
-        username: this.username || '',
-        epicGamesID: this.epicGamesID || '',
+        username: this.username || ''
     };
 };
 
-UserSchema.methods.validatePassword = function(password) {
-    return bcrypt.compare(password, this.password);
+userSchema.methods.generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 
-UserSchema.statics.hashPassword = function(password) {
-    return bcrypt.hash(password, 10);
+// checking if password is valid
+userSchema.methods.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
 };
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', userSchema);
 module.exports = {User};

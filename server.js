@@ -3,16 +3,21 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const flash = require('connect-flash');
 
-require('dotenv').config()
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+
+
+ require('./auth/passport')(passport);
 
 
 const { DATABASE_URL, PORT } = require('./config');
 const newsRouter = require('./routers/newsRouter');
 const settingsRouter = require('./routers/settingsRouter');
 const userRouter = require('./routers/usersRouter');
-//const playerPostsRouter = require('./routers/playerPostsRouter')
-const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
+const playerPostsRouter = require('./routers/playerPostsRouter')
+
 
 
 mongoose.Promise = global.Promise;
@@ -20,6 +25,10 @@ const app = express();
 
 app.use(morgan('common'));
 app.use(express.json());
+app.use(bodyParser());
+app.use(cookieParser());
+
+app.set('view engine', 'ejs');
 
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -31,7 +40,10 @@ app.use(function (req, res, next) {
     next();
 });
 
-passport.use(localStrategy);
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash());
 
 app.use(express.static('public'));
 
@@ -42,7 +54,9 @@ app.get("/about", (req, res) => {
     res.sendFile(__dirname + "/public/about.html");
 });
 app.get("/forums", (req, res) => {
-    res.sendFile(__dirname + "/public/forums.html");
+    res.sendFile(__dirname + "/public/forums.html", {
+        user: req.user // get the user out of session and pass to template
+    });
 });
 app.get("/news", (req, res) => {
     res.sendFile(__dirname + "/public/news.html");
@@ -54,9 +68,31 @@ app.get("/login-page", (req, res) => {
     res.sendFile(__dirname + "/public/login.html")
 })
 
+app.get('/profile', function(req, res) {
+    res.render('profile.ejs', {
+        user: req.user // get the user out of session and pass to template
+    });
+
+})
+app.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
+});
+
+
+function isLoggedIn(req, res, next) {
+
+    // if user is authenticated in the session, carry on
+    if (req.isAuthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/');
+}
+
 app.use('/news', newsRouter);
 app.use('/pro-settings', settingsRouter);
-//app.use('/player-posts', playerPostsRouter);
+app.use('/player-posts', playerPostsRouter);
 app.use('/api/users', userRouter);
 app.use('api/login', userRouter);
 
@@ -98,4 +134,4 @@ function closeServer() {
 if (require.main === module) {
     runServer(DATABASE_URL).catch(err => console.error(err));
 }
-module.exports = { app, runServer, closeServer };
+module.exports = { app, runServer, closeServer, passport };
