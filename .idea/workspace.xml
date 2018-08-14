@@ -3,22 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8ba7d05e-d4f9-473c-9819-d5bcf55fbf6a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/forums.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/forums.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/pro-settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/pro-settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/newsModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/newsModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/newsRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/newsRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/playerPostsRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/playerPostsRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/settingsRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/settingsRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/profile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/Public/profile.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,8 +23,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+            <state relative-caret-position="136">
+              <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -48,7 +32,7 @@
       <file leaf-file-name="news.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Public/news.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
+            <state relative-caret-position="799">
               <caret line="47" column="40" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="50" />
             </state>
           </provider>
@@ -57,8 +41,8 @@
       <file leaf-file-name="profile.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Public/profile.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="42" column="62" lean-forward="true" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="68" />
+            <state relative-caret-position="714">
+              <caret line="42" column="62" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -76,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/models/playerPostModel.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+              <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -85,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/Public/forums.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -103,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/Public/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="731">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -112,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/Public/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -393,12 +377,14 @@
       <workItem from="1534085130204" duration="8013000" />
       <workItem from="1534098181814" duration="6815000" />
       <workItem from="1534116144579" duration="19406000" />
-      <workItem from="1534181405310" duration="17111000" />
+      <workItem from="1534181405310" duration="18319000" />
+      <workItem from="1534214054204" duration="1200000" />
+      <workItem from="1534235796623" duration="18000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274497000" />
+    <option name="totallyTimeSpent" value="276923000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -411,7 +397,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49891067" visible="true" weight="0.12118019" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
@@ -438,19 +423,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" sideWeight="0.50108933" side_tool="true" weight="0.08377239" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49891067" visible="true" weight="0.12118019" />
       <window_info id="Structure" order="1" sideWeight="0.50108933" side_tool="true" weight="0.08377239" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
       <window_info anchor="bottom" id="REST Client" order="11" sideWeight="0.7526652" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="top" id="Mongo Explorer" order="0" side_tool="true" weight="0.068252325" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.24733475" side_tool="true" weight="0.046511628" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32897604" />
@@ -626,21 +611,21 @@
     <entry file="file://$PROJECT_DIR$/Public/forums.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Public/profile.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="42" column="62" lean-forward="true" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="68" />
+        <state relative-caret-position="714">
+          <caret line="42" column="62" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -654,20 +639,20 @@
     <entry file="file://$PROJECT_DIR$/models/playerPostModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Public/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Public/news.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
+        <state relative-caret-position="799">
           <caret line="47" column="40" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="50" />
         </state>
       </provider>
@@ -681,8 +666,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+        <state relative-caret-position="136">
+          <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
         </state>
       </provider>
     </entry>
