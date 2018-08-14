@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-const {News} = require('../models/userModel')
+const {News} = require('../models/newsModel');
 
 router.get('/', (req, res) => {
     News.find()
@@ -13,8 +13,8 @@ router.get('/', (req, res) => {
                 return {
                     id: post._id,
                     title: post.title,
-                    imageURL: post.imageURL,
                     url: post.url,
+                    imageURL: post.imageURL,
                     source: post.source
                 };
             }));

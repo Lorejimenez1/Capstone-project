@@ -3,18 +3,13 @@
 }
 body {
     margin: 0;
-    background: ghostwhite;
-    font-family: Maven Pro;
+    font-family: 'Courgette';
     background: url("https://www.hdwallpaperslife.com/wp-content/uploads/2018/05/fortnite_dark_voyager_4k.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 body header {
     background: #282828;
-}
-
- main {
- 
 }
 
 legend {
@@ -25,7 +20,8 @@ legend {
   padding-bottom: 40px;
 }
 
-fieldset { 
+fieldset {
+    height: 460px;
   margin: 0;
   border: 0;
   padding-left: 40px;
@@ -53,13 +49,12 @@ input[type=text], input[type=password] {
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
-    box-sizing: border-box;
 }
 
 /* Set a style for all buttons */
 button {
     background-color: #4CAF50;
-    color: white;
+    color: royalblue;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -120,7 +115,7 @@ form  {
   margin: 0 auto;
   font-weight: 900;
   border: solid 1px black;
-  border-radius: 5px;
+  border-radius: 2px;
 } 
 .img-tweet {
     width: 300px;
@@ -145,7 +140,7 @@ form  {
 
 .mySlides {
     border: 1px solid black;
-    height: 375px;
+    height: 330px;
     width: 100%;
 }
 
@@ -242,19 +237,21 @@ header::after {
 }
 
 #news-tiitle {
+    height: 100px;
     Background: white;
     opacity: .8;
     border: 2px solid darkgray;
 }
 
+#news-main {
+    height: 900px;
+    width: 100%;
+    background-color: black;
+    opacity: .9;
 
-table, th, td {
-    border: 1px solid black;
-    text-align: left;
 }
-#grid {
-    background: white;
-}
+
+
 .topnav {
     overflow: hidden;
     background-color: #333;
@@ -290,42 +287,43 @@ table, th, td {
     cursor: pointer;
 }
 .card-image {
-    border-bottom: 1px solid black;
+    border: 2px solid darkgray;
     height: 45%;
     width: 100%;
 }
 
 .card-content {
-    background-color: #64FFDA;
+    border: 2px solid darkgray;
+    background-color: #979aaa;
     height: 54%;
-    padding: 10px;
+
 }
 .card-content a {
     margin: 0.5em 0;
 }
 .card-content h3 {
+    color: black;
     display: block;
     height: 90%;
-    font-size: 20px;
-    margin-top: 0;
-    margin-bottom: 0;
+    font-size: 16px;
     padding: 10px;
-    text-align: center;
+    margin: auto;
+}
+.card-content p {
+    font-size: 14px;
+    font-weight: bold;
+
 }
 p {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 800;
     font-style: italic;
     text-align: center;
-    padding-bottom: 0;
+    padding: 3px;
     margin: 0;
 }
-main {
-    padding-left: 150px;
-    padding-right: 150px;
-}
 .col-4 {
-    background: white;
+
     height: 400px;
 
 }
@@ -358,10 +356,135 @@ section {
 }
 
 #signup_form {
+    height: 700px;
     padding-top: 35px;
 }
 #signup_button {
-    color: #4CAF50;
+    background-color: #1C6EA4;
+    color: white;
+}
+table.blueTable {
+    font-family: "Verdana", Geneva, sans-serif;
+    box-shadow: 10px 10px 5px grey;
+    background-color: #F5F3F3;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+table.blueTable td, table.blueTable th {
+    border: 1px solid #7D7D7D;
+    padding: 5px 5px;
+}
+table.blueTable tbody td {
+    font-size: 13px;
+    color: #00020A;
+}
+table.blueTable tr:nth-child(even) {
+    background: #B3B3B3;
+}
+table.blueTable thead {
+    background: #433B7A;
+    background: -moz-linear-gradient(top, #726c9b 0%, #554e87 66%, #433B7A 100%);
+    background: -webkit-linear-gradient(top, #726c9b 0%, #554e87 66%, #433B7A 100%);
+    background: linear-gradient(to bottom, #726c9b 0%, #554e87 66%, #433B7A 100%);
+}
+table.blueTable thead th {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    border-left: 2px solid #D0E4F5;
+}
+table.blueTable thead th:first-child {
+    border-left: none;
+}
+
+table.blueTable tfoot td {
+    font-size: 14px;
+}
+table.blueTable tfoot .links {
+    text-align: right;
+}
+table.blueTable tfoot .links a{
+    display: inline-block;
+    background: #1C6EA4;
+    color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+#js-settings-results {
+    padding: 0;
+    background: white;
+    border: 1px solid grey;
+    height: 900px;
+}
+
+.js-forum {
+    margin-top: 10px;
+    height: 150px;
+    padding-top: 10px;
+    border: 1px solid grey;
+
+}
+
+#js-username-p {
+    display: inline-block;
+}
+.col-12 button {
+    display: inline-block;
+    width: 25%;
+}
+.p-player-post {
+    display: block;
+    height: 60%;
+    padding-top: 2px;
+}
+#objID {
+    font-size: 5px;
+}
+.forums-footer {
+    display: block;
+    height: 20%;
+
+}
+#Main-header {
+    padding-left: 200px;
+    padding-right: 200px;
+    font-family: 'Allan';
+    font-size: 55px;
+
+}
+#home-main {
+    opacity: .9;
+    margin-left: 150px;
+    margin-right: 150px;
+    background: black;
+}
+
+h4.result-header {
+    color: white;
+}
+#motivation-container {
+
+    background: white;
+}
+#motivation-container h4 {
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}
+#motivation-container p {
+    display: inline-block;
+    height: 170px;
+    width: auto;
+}
+#home-main .col-6 {
+    outline: solid 1px grey;
+}
+#js-news-results h1 {
+    text-align: center;
+    font-family: 'Allan';
+    color: white;
 }
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
@@ -371,6 +494,7 @@ section {
 
     }
 }
+
 
 @media screen and (max-width: 600px) {
     .topnav.responsive {position: relative;}
@@ -384,4 +508,5 @@ section {
         display: block;
         text-align: left;
     }
+
 }

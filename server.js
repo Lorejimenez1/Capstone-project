@@ -28,7 +28,8 @@ app.use(express.json());
 app.use(bodyParser());
 app.use(cookieParser());
 
-app.set('view engine', 'ejs');
+app.set('views', __dirname + '/public');
+app.engine('html', require('ejs').renderFile);
 
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -39,8 +40,12 @@ app.use(function (req, res, next) {
     }
     next();
 });
+app.use(function(req, res, next){
+    res.locals.user = req.user;
+    next();
+});
 
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(session({ secret: 'ilovefortnitetoken'})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash());
@@ -54,7 +59,7 @@ app.get("/about", (req, res) => {
     res.sendFile(__dirname + "/public/about.html");
 });
 app.get("/forums", (req, res) => {
-    res.sendFile(__dirname + "/public/forums.html", {
+    res.render("forums.html", {
         user: req.user // get the user out of session and pass to template
     });
 });
@@ -90,7 +95,7 @@ function isLoggedIn(req, res, next) {
     res.redirect('/');
 }
 
-app.use('/news', newsRouter);
+app.use('/news-posts', newsRouter);
 app.use('/pro-settings', settingsRouter);
 app.use('/player-posts', playerPostsRouter);
 app.use('/api/users', userRouter);

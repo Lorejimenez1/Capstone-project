@@ -6,7 +6,7 @@ mongoose.Promise = global.Promise;
 
 const {Settings} = require('../models/settingsModel')
 
-router.get('/pro-settings', (req, res) => {
+router.get('/', (req, res) => {
     Settings.find()
         .then(players => {
             res.json(players.map(player => player.serialize()));
@@ -17,7 +17,7 @@ router.get('/pro-settings', (req, res) => {
         });
 });
 
-router.post('/pro-settings', (req, res) => {
+router.post('/', (req, res) => {
     const requiredFields = ['player', 'mouse', 'sensitivity', 'dpi', 'ads', 'scopeSensitivity', 'keyboard'];
     for (let i = 0; i < requiredFields.length; i++) {
         const field = requiredFields[i];

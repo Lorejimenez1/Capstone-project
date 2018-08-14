@@ -6,7 +6,7 @@
     <meta name="description" content="Competitive fortnite web app">
     <link href="https://fonts.googleapis.com/css?family=Metrophobic" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="./Public/index.css" rel="stylesheet" type="text/css" />
+    <link href="index.css" rel="stylesheet" type="text/css" />
     <title>New</title>
 </head>
 <body>
@@ -24,25 +24,25 @@
     <main>
         <div class="container">
 
-            <div class="page-header text-center">
-                <h1><span class="fa fa-anchor"></span> Profile Page</h1>
-                <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+            <div class="row">
+                <div class="col-12" id="news-tiitle">
+                    <h1>Fortnite Society</h1>
+                    <h2>Profile page</h2>
+                </div>
             </div>
 
             <div class="row">
 
                 <!-- LOCAL INFORMATION -->
-                <div class="col-sm-6">
-                    <div class="well">
+                <div class="col-12" id="news-tiitle">
                         <h3><span class="fa fa-user"></span> Local</h3>
-
                         <p>
                             <strong>id</strong>: <%= user._id %><br>
-                            <strong>email</strong>: <%= user.username %><br>
-                            <strong>password</strong>: <%= user.password %>
+                            <strong>Username</strong>: <%= user.username %><br>
                         </p>
-
-                    </div>
+                    <section role="contentinfo" class="forums-footer">
+                        <p>Find other players <a href="/forums">Forums page</a></p>
+                    </section>
                 </div>
 
             </div>
@@ -53,7 +53,7 @@
     </main>
 
 
-<script src="../Public/index.js"></script>
+<script src="index.js"></script>
 
 </body>
 </html>

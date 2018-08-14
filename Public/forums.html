@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Competitive fortnite web app">
-    <link href="https://fonts.googleapis.com/css?family=Metrophobic" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="index.css" rel="stylesheet" type="text/css" />
-    <title>New</title>
-</head>
-<body>
-    <header>
-        <div class="topnav" id="myTopnav">
-            <img src="https://pbs.twimg.com/media/DS-XbyJW0AAX_Dk.png" class="nav-logo">
-            <a href="/" class="active">Home</a>
-            <a href="/news">News</a>
-            <a href="/settings">Pro-settings</a>
-            <a href="/forums">Find Players</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i></a>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="Competitive fortnite web app">
+        <link href="https://fonts.googleapis.com/css?family=Metrophobic" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="index.css" rel="stylesheet" type="text/css" />
+        <title>New</title>
+    </head>
+    <body>
+        <header>
+            <div class="topnav" id="myTopnav">
+                <img src="https://pbs.twimg.com/media/DS-XbyJW0AAX_Dk.png" class="nav-logo">
+                <a href="/" class="active">Home</a>
+                <a href="/news">News</a>
+                <a href="/settings">Pro-settings</a>
+                <a href="/forums">Find Players</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i></a>
 
-        </div>
-    </header>
-    <main>
-        <section>
-            <h2>All players</h2>
-            <form id="js-player-entry-form">
-                <label for="js-new-player">Make a post </label>
-                <input type="text" name="content" id="js-new-player" placeholder="Welcome yourself to the community for all players to see">
-                <button type="submit">Add post</button>
-            </form>
+            </div>
+        </header>
+        <main id="forums-main">
+            <section class="row">
 
-        </section>
-        <div class="js-post-results">
+                <form id="js-player-entry-form">
+                    <label for="js-new-player"><p id="new-author"><%= user.username %></p>>Make a post </label>
+                    <input type="text" name="content" id="js-new-player" placeholder="Welcome yourself to the community for all players to see">
+                    <button type="submit">Add post</button>
+                </form>
 
-        </div>
-    </main>
+            </section>
+            <div class = "row js-post-results">
+
+            </div>
+        </main>
 
 
-    <script src="index.js"></script>
+        <script src="index.js"></script>
 
-</body>
+    </body>
 </html>

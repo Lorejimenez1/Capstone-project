@@ -8,7 +8,7 @@ const {PlayerPost} = require('../models/playerPostModel')
 
 router.get('/', (req, res) => {
         PlayerPost
-        .find()
+        .find().sort({_id: -1})
         .then(posts => {
             res.json(posts.map(post => post.serialize()));
         })
@@ -39,5 +39,13 @@ router.post('/', (req, res) => {
             res.status(500).json({message: 'Internal server error'});
         });
 });
+router.delete('/:id', (req, res) => {
+    PlayerPost.findByIdAndRemove(req.params.id)
+        .then(() => {
+            console.log(`Deleted  post with id \`"${req.params.id}"\``);
+            res.status(204).end();
+        });
+});
+
 
 module.exports = router;

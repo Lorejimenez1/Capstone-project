@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-const newsSchema = mongoose.Schema ({
+const storySchema = mongoose.Schema ({
     title: 'string',
     url: 'string',
     imageURL: 'string',
     source: 'string'
 })
 
-const News = mongoose.model('News', newsSchema);
+const News = mongoose.model('News', storySchema);
 module.exports = {News};

@@ -1,73 +1,41 @@
-const NEWS_URL = "localhost:8080/news-posts"
-const FORUMS_URL = "/player-posts"
+const NEWS_URL = "/news-posts";
+const FORUMS_URL = "/player-posts";
+const SETTINGS_URL = "/pro-settings";
+let currentUser = $('#new-author').html();
 
 
+function getRecentNews(callbackFn) {
+    setTimeout(function(){$.getJSON(NEWS_URL, callbackFn)}, 100);
 
-const playerEntryTemplate = (
-
-    '<p><span class="player-post js-player-post"></span></p>' +
-    '<div class="shopping-item-controls">'+
-    '<p class="user-name">By <%= user.username %></p>' +
-    '<button class="js-shopping-item-delete">' +
-    '<span class="button-label">delete</span>' +
-    '</button>' +
-    '</div>'
-
-
-);
-const MOCK_STATUS_UPDATES = {
-"newsPosts": [
-    {
-    "id": "111",
-    "title": "EPic games latest esports statement",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.",
-    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51QW0qiuoA70YfMV77abg-hfzFio33d8Iu1Zs-y2waD7H8qLJDQ",
-    "publishedAt": "1470016976609"
-    },
-     {
-    "id": "222",
-    "title": "placeholder",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. ",
-         "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51QW0qiuoA70YfMV77abg-hfzFio33d8Iu1Zs-y2waD7H8qLJDQ",
-    "publishedAt": "1470016976609"
-    },
-     {
-    "id": "333",
-    "title": "placeholder",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. ",
-         "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51QW0qiuoA70YfMV77abg-hfzFio33d8Iu1Zs-y2waD7H8qLJDQ",
-    "publishedAt": "1470016976609"
-    },
-    ]
-};
-
-function getRecentStatusUpdates(callbackFn) {
-    setTimeout(function(){ callbackFn(MOCK_STATUS_UPDATES)}, 100);
 }
 
 // this function stays the same when we connect
 // to real API later
-function displayStatusUpdates(data) {
+function displayNews(data) {
+
     for (index in data) {
        $('#js-news-results').append(
         `  	<div class=col-4>
   		<div class="card w3-hover-grayscale">
   			<img class="card-image" alt=""
-  			src="${data[index].imageUrl}">
+  			src="${data[index].imageURL}">
   			<div class="card-content">
   				<h3><a href="${data[index].url}" target="_blank">${data[index].title}</a>
   				</h3>
+  				<p>${data[index].source}</p>
 				</div>
 			</div>		
   	</div>
 `);
     }
+
+
 }
 
 // this function can stay the same even when we
 // are connecting to real API
-function getAndDisplayStatusUpdates() {
-    getRecentStatusUpdates(displayStatusUpdates);
+function getAndDisplayNews() {
+    getRecentNews(displayNews);
 }
 /*
 var myIndex = 0;
@@ -98,21 +66,17 @@ function myFunction() {
     }
 }
 
-
-
-function getAvailablePlayers(callbackFn) {
-    setTimeout(function(){ callbackFn(MOCK_STATUS_UPDATES)}, 100);
-}
-
-function getAndDisplayFreePlayers() {
+/*function getAndDisplayFreePlayers() {
     console.log('Retrieving  posts');
     $.getJSON(FORUMS_URL, function(items) {
         console.log('Rendering shopping list');
         var itemElements = items.map(function(item) {
-            var element = $(playerEntryTemplate);
+            var element = playerEntryTemplate;
             element.attr('id', item.id);
             var itemName = element.find('.js-player-post');
+            var author = element.find('.user-name')
             itemName.text(item.content);
+            author.text(item.username);
             return element
         });
         $('.js-post-results').html(itemElements);
@@ -121,15 +85,15 @@ function getAndDisplayFreePlayers() {
             ;
     });
 }
-
+*/
 function addPlayerPost(post) {
     console.log('Adding : ' + post);
     $.ajax({
         method: 'POST',
         url: FORUMS_URL,
-        data: JSON.stringify(item),
-        success: function(data) {
-            getAndDisplayFreePlayers();
+        data: JSON.stringify(post),
+        success: function() {
+            getAndDisplayPlayerPosts();
         },
         dataType: 'json',
         contentType: 'application/json'
@@ -142,13 +106,95 @@ function handlePlayerPostAdd() {
         e.preventDefault();
         addPlayerPost({
             content: $(e.currentTarget).find('#js-new-player').val(),
-            username: user.username
+            username: currentUser
         });
     });
 }
 
+function getSettings(callback) {
+    console.log('getting: Pro Settings');
+    $.ajax({
+        method: 'get',
+        url: SETTINGS_URL,
+        dataType: 'json',
+        success: callback,
+
+    });
+}
+
+function displaySettings(data) {
+
+    console.log(data)
+    for (index in data) {
+        $('.grid-body').append(
+            ` <tr>
+                 <td>${data[index].player}</td>
+                 <td>${data[index].mouse}</td>
+                 <td>${data[index].sensitivity}</td>
+                 <td>${data[index].dpi}</td>
+                 <td>${data[index].ads}</td>
+                 <td>${data[index].ScopeSensitivity}</td>
+                 <td>${data[index].keyboard}</td>    
+              </tr>
+            `
+            );
+    }
+}
+
+function getAndDisplaySettings() {
+    getSettings(displaySettings);
+}
+
+function getPosts(callbackFn) {
+    setTimeout(function(){$.getJSON(FORUMS_URL, callbackFn)}, 100);
+}
+function displayPosts(data) {
+    $('.js-post-results').empty();
+    for (index in data) {
+        $('.js-post-results').append( `<div class="col-12 js-forum" id="js-forum-${data[index].username}-${data[index].id}"><p class="p-player-post"><span class="player-post js-player-post">${data[index].content}</span></p>
+            <p class="user-name" id ="js-username-p">Post by ${data[index].username}</p>`)
+            if( currentUser === `${data[index].username}`) {
+            console.log('adding delete button')
+                $(`#js-forum-${data[index].username}-${data[index].id}`).append(`<button class="js-shopping-item-delete">
+            <span class="button-label">delete</span></button><p id="objID">${data[index].id}</p>`)
+
+            }
+
+        }
+
+
+
+
+
+}
+function getAndDisplayPlayerPosts() {
+    getPosts(displayPosts);
+}
+function handleDeletePost() {
+    $('.js-post-results').on('click', 'button', function(event) {
+        event.preventDefault();
+        let query = $('.js-forum').find('#objID').html();
+        console.log(query);
+        deletePost(query);
+});
+}
+function deletePost(query) {
+    $.ajax({
+        url: `/player-posts/${query}`,
+        type: 'DELETE',
+        success: function() {
+            getAndDisplayPlayerPosts();
+        }
+
+
+    });
+
+}
+
 $(function() {
-    getAndDisplayStatusUpdates();
-    getAndDisplayFreePlayers();
+    getAndDisplaySettings();
+    getAndDisplayNews();
+    getAndDisplayPlayerPosts();
     handlePlayerPostAdd();
+    handleDeletePost();
 });
