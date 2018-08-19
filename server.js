@@ -53,7 +53,7 @@ app.use(flash());
 app.use(express.static('public'));
 
 app.get("/", (req, res) => {
-  res.render("index.html");
+ res.sendFile(__dirname + "/public/index.html");
 });
 app.get("/about", (req, res) => {
     res.sendFile(__dirname + "/public/about.html");
