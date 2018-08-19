@@ -11,7 +11,7 @@ const session = require('express-session');
 
  require('./auth/passport')(passport);
 
-
+const package = require('./package.json');
 const { DATABASE_URL, PORT } = require('./config');
 const newsRouter = require('./routers/newsRouter');
 const settingsRouter = require('./routers/settingsRouter');
