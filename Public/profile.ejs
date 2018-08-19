@@ -11,49 +11,37 @@
 </head>
 <body>
     <header>
-        <div class="topnav" id="myTopnav">
-            <img src="https://d23wybgr07mqxm.cloudfront.net/wp-content/uploads/2018/03/15220141/fortnite-update1.png" class="nav-logo">
-            <a href="/login-page" class="active">Login</a>
-            <a href="/news">News</a>
-            <a href="/settings">Pro-settings</a>
-            <a href="/forums">Find Players</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i></a>
-        </div>
+      <nav class="topnav" id="myTopnav">
+        <img src="../images/Freedom!_F.png" class="nav-logo">
+        <a href="/" class="active">Home</a>
+        <a href="/signup" class="active">Sign up</a>
+        <a href="/login-page">Login</a>
+        <a href="/settings">Pro-Settings</a>
+        <a href="/forums">Find Players</a>
+        <a href="javascript:void(0);" class="icon" onclick="responsiveNav()">
+          <i class="fa fa-bars"></i></a>
+      </nav>
     </header>
-    <main>
-        <div class="container">
-
-            <div class="row">
-                <div class="col-12" id="news-tiitle">
+    <main> 
+      <div class="row">
+                <div class="col-12 banner" >
                     <h1>Fortnite Society</h1>
-                    <h2>Profile page</h2>
                 </div>
-            </div>
+      </div>
 
-            <div class="row">
-
-                <!-- LOCAL INFORMATION -->
-                <div class="col-12" id="news-tiitle">
-                        <h3><span class="fa fa-user"></span> Local</h3>
-                        <p>
-                            <strong>id</strong>: <%= user._id %><br>
-                            <strong>Username</strong>: <%= user.username %><br>
-                        </p>
-                    <section role="contentinfo" class="forums-footer">
-                        <p>Find other players <a href="/forums">Forums page</a></p>
-                    </section>
-                </div>
-
-            </div>
+      <div class="row">
+        <div class="col-12 profile-container" >
+          <h2>Profile page</h2>
+          <p>
+            <strong>id</strong>: <%= user._id %><br>
+            <strong>Username</strong>: <%= user.username %><br>
+          </p>
+          <a href="/forums">find other players</a>
         </div>
-
-
+      </div>
 
     </main>
-
-
-<script src="index.js"></script>
+  <script src="index.js"></script>
 
 </body>
 </html>

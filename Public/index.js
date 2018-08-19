@@ -57,7 +57,7 @@ function carousel() {
 }
 */
 
-function myFunction() {
+function responsiveNav() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
         x.className += " responsive";
@@ -66,26 +66,6 @@ function myFunction() {
     }
 }
 
-/*function getAndDisplayFreePlayers() {
-    console.log('Retrieving  posts');
-    $.getJSON(FORUMS_URL, function(items) {
-        console.log('Rendering shopping list');
-        var itemElements = items.map(function(item) {
-            var element = playerEntryTemplate;
-            element.attr('id', item.id);
-            var itemName = element.find('.js-player-post');
-            var author = element.find('.user-name')
-            itemName.text(item.content);
-            author.text(item.username);
-            return element
-        });
-        $('.js-post-results').html(itemElements);
-
-
-            ;
-    });
-}
-*/
 function addPlayerPost(post) {
     console.log('Adding : ' + post);
     $.ajax({
@@ -192,6 +172,7 @@ function deletePost(query) {
 }
 
 $(function() {
+    responsiveNav();
     getAndDisplaySettings();
     getAndDisplayNews();
     getAndDisplayPlayerPosts();

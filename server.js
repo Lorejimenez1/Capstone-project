@@ -28,9 +28,6 @@ app.use(express.json());
 app.use(bodyParser());
 app.use(cookieParser());
 
-app.set('views', __dirname + '/public');
-app.engine('html', require('ejs').renderFile);
-
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
@@ -45,6 +42,9 @@ app.use(function(req, res, next){
     next();
 });
 
+app.set('views', __dirname + '/public');
+app.engine('html', require('ejs').renderFile);
+
 app.use(session({ secret: 'ilovefortnitetoken'})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
@@ -58,13 +58,14 @@ app.get("/", (req, res) => {
 app.get("/about", (req, res) => {
     res.sendFile(__dirname + "/public/about.html");
 });
-app.get("/forums", (req, res) => {
+app.get("/forums", isLoggedIn, (req, res) => {
+
     res.render("forums.html", {
         user: req.user // get the user out of session and pass to template
     });
 });
-app.get("/news", (req, res) => {
-    res.sendFile(__dirname + "/public/news.html");
+app.get("/signup", (req, res) => {
+    res.sendFile(__dirname + "/public/signup.html");
 })
 app.get("/settings", (req, res) => {
     res.sendFile(__dirname + "/public/pro-settings.html");
@@ -73,13 +74,13 @@ app.get("/login-page", (req, res) => {
     res.sendFile(__dirname + "/public/login.html")
 })
 
-app.get('/profile', function(req, res) {
+app.get('/profile', (req, res) => {
     res.render('profile.ejs', {
         user: req.user // get the user out of session and pass to template
     });
 
 })
-app.get('/logout', function(req, res) {
+app.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/');
 });
@@ -101,6 +102,9 @@ app.use('/player-posts', playerPostsRouter);
 app.use('/api/users', userRouter);
 app.use('api/login', userRouter);
 
+app.use('*', (req,res)=> {
+    res.send('user not found. Please sign up or re-sign in.');
+});
 let server;
 
 function runServer(databaseUrl, port = PORT) {

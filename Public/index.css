@@ -1,12 +1,18 @@
+
 * {
   box-sizing: border-box;
 }
 body {
     margin: 0;
-    font-family: 'Courgette';
-    background: url("https://www.hdwallpaperslife.com/wp-content/uploads/2018/05/fortnite_dark_voyager_4k.jpg");
+    font-family: 'Metrophobic';
+    background: url("../images/fortnite_dark_voyager_4k.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+}
+.settings-body {
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/stardust.png");
 }
 body header {
     background: #282828;
@@ -21,7 +27,7 @@ legend {
 }
 
 fieldset {
-    height: 460px;
+  height: 460px;
   margin: 0;
   border: 0;
   padding-left: 40px;
@@ -166,13 +172,6 @@ form  {
 
 .col-3, .col-4, .col-6, .col-12 {
     float: left;
-
-    /* Gutters:
-     * Each column is padded by half-a-gutter on each side,
-     *
-     * Half a gutter is 10px, 10/960 (context) = 1.041666%
-     *
-     */
     padding-left: 1.04166666%;
     padding-right: 1.04166666%;
 }
@@ -181,12 +180,10 @@ form  {
 .col-3, .col-4, .col-6, .col-12 {
     width: 100%;
 }
-.col-6 {
-    
+ .home-col-6 {
+    border: 2px solid silver;
 }
 
-
-/* Non-mobile, grid */
 @media only screen and (min-width: 640px) {
     /* 3 columns, 3/12 in % */
     .col-3 {
@@ -208,11 +205,9 @@ form  {
         width: 100%;
     }
 }
-
 .col-12 {
     text-align: center;
 }
-
 .col-12 h1 {
     text-align: center;
 }
@@ -220,7 +215,6 @@ p {
     font-weight: 900;
     font-size:30px;
 }
-
 body header {
     background: #282828;
 }
@@ -235,23 +229,23 @@ header::after {
     height: 65px;
     padding: 14px 16px;;
 }
-
-#news-tiitle {
-    height: 100px;
+.banner {
+    height: 120px;
     Background: white;
-    opacity: .8;
+    opacity: .9;
     border: 2px solid darkgray;
 }
-
 #news-main {
     height: 900px;
     width: 100%;
     background-color: black;
     opacity: .9;
-
 }
+.video img{
 
-
+    width: 440px;
+    height: 180px;
+}
 .topnav {
     overflow: hidden;
     background-color: #333;
@@ -271,9 +265,6 @@ header::after {
     background-color: #ddd;
     color: black;
 }
-
-
-
 .topnav .icon {
     display: none;
 }
@@ -292,9 +283,9 @@ header::after {
     width: 100%;
 }
 
-.card-content {
+.col-4 .card-content {
     border: 2px solid darkgray;
-    background-color: #979aaa;
+    background-color: white;
     height: 54%;
 
 }
@@ -315,9 +306,9 @@ header::after {
 
 }
 p {
+    font-family: "Metrophobic";
     font-size: 18px;
     font-weight: 800;
-    font-style: italic;
     text-align: center;
     padding: 3px;
     margin: 0;
@@ -327,8 +318,9 @@ p {
     height: 400px;
 
 }
-.col-12 {
-    background-color: white;
+.col-12{
+    color: white;
+    background-color: #485167;
 }
 
 button:hover {
@@ -365,7 +357,7 @@ section {
 }
 table.blueTable {
     font-family: "Verdana", Geneva, sans-serif;
-    box-shadow: 10px 10px 5px grey;
+    
     background-color: #F5F3F3;
     width: 100%;
     text-align: center;
@@ -383,10 +375,10 @@ table.blueTable tr:nth-child(even) {
     background: #B3B3B3;
 }
 table.blueTable thead {
-    background: #433B7A;
-    background: -moz-linear-gradient(top, #726c9b 0%, #554e87 66%, #433B7A 100%);
-    background: -webkit-linear-gradient(top, #726c9b 0%, #554e87 66%, #433B7A 100%);
-    background: linear-gradient(to bottom, #726c9b 0%, #554e87 66%, #433B7A 100%);
+    background: #603e94;
+    background: -moz-linear-gradient(top, #726c9b 0%, #554e87 66%, #603e94 100%);
+    background: -webkit-linear-gradient(top, #726c9b 0%, #554e87 66%, #603e94 100%);
+    background: linear-gradient(to bottom, #726c9b 0%, #554e87 66%, #603e94 100%);
 }
 table.blueTable thead th {
     font-size: 16px;
@@ -419,11 +411,11 @@ table.blueTable tfoot .links a{
     height: 900px;
 }
 
-.js-forum {
+ .js-forum {
     margin-top: 10px;
     height: 150px;
     padding-top: 10px;
-    border: 1px solid grey;
+    border: 3px solid white;
 
 }
 
@@ -454,38 +446,56 @@ table.blueTable tfoot .links a{
     font-size: 55px;
 
 }
-#home-main {
-    opacity: .9;
+.home-main {
+    opacity: .96;
     margin-left: 150px;
     margin-right: 150px;
     background: black;
+    padding-bottom: 100px;
 }
 
 h4.result-header {
+    display: inline-block;
+    width: 85%;
     color: white;
 }
-#motivation-container {
 
+.motivation-container {
+    border: 2px solid silver;
     background: white;
 }
-#motivation-container h4 {
+.motivation-container h4 {
     text-align: center;
     font-size: 30px;
     color: black;
 }
-#motivation-container p {
+.motivation-container p {
     display: inline-block;
     height: 170px;
     width: auto;
-}
-#home-main .col-6 {
-    outline: solid 1px grey;
 }
 #js-news-results h1 {
     text-align: center;
     font-family: 'Allan';
     color: white;
 }
+.profile-container {
+    outline: 1px solid black;
+}
+.profile-container p, a {
+    font-family: 'Metrophobic';
+}
+.fa, .fa-youtube-play {
+    display: inline-block;
+    height: 10%;
+    width: 5%;
+}
+.settings-container {
+    padding: 0;
+    background: #666666;
+    border: none;
+}
+
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {

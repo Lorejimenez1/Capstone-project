@@ -9,29 +9,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="index.css" rel="stylesheet" type="text/css" />
 
-    <title>News page</title>
+    <title>Login page</title>
 </head>
 <body>
     <header>
-        <div class="topnav" id="myTopnav">
-            <img src="https://pbs.twimg.com/media/DS-XbyJW0AAX_Dk.png" class="nav-logo">
+        <nav class="topnav" id="myTopnav">
+            <img src="../images/Freedom!_F.png" class="nav-logo">
             <a href="/" class="active">Home</a>
-            <a href="/news">News</a>
+            <a href="/signup" class="active">Sign up</a>
+            <a href="/login-page">Login</a>
             <a href="/settings">Pro-Settings</a>
             <a href="/forums">Find Players</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i></a>
+            <a href="javascript:void(0);" class="icon" onclick="responsiveNav()">
+              <i class="fa fa-bars"></i></a>
 
-        </div>
+        </nav>
     </header>
     <main role="main" >
-        <div class="col-12" id="news-tiitle">
-            <h1>Fortnite Prime </h1>
-            <h2>Just a bunch of competitive players</h2>
-        </div>
-        <form action="/api/users/login" method="post">
+        <form  class="login-form" action="/api/users/login" method="post">
             <div class="imgcontainer">
-                <img src="" alt="Avatar" class="avatar">
+                <i class="fa fa-user-o" style="font-size:48px;color:red"></i>
             </div>
 
             <div class="container">

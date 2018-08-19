@@ -11,6 +11,7 @@ const jsonParser = bodyParser.json();
 
 // Post to register a new user
 // process the signup form
+
 router.post('/', passport.authenticate('local-signup', {
     successRedirect : '/profile', // redirect to the secure profile section
     failureRedirect : '/', // redirect back to the signup page if there is an error

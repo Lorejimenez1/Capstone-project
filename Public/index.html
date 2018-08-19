@@ -1,85 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title></title>
-        <meta name="description" content="Competitive fortnite web app">
-        <link href="index.css" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Metrophobic" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        
-    </head>    
-    <body>
-        <header>
-            <div class="topnav" id="myTopnav">
-                <img src="https://d23wybgr07mqxm.cloudfront.net/wp-content/uploads/2018/03/15220141/fortnite-update1.png" class="nav-logo">
-                <a href="/login-page" class="active">Login</a>
-                <a href="/news">News</a>
-                <a href="/settings">Pro-settings</a>
-                <a href="/forums">Find Players</a>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fa fa-bars"></i></a>
-            </div>
-        </header>
-        <main>
-            <div class="row">
-                <div class="col-6" id="Welcome-container">
-                    <h1>Welcome to Fortnite Prime</h1>
-                    
-                      <img class="mySlides" src="https://pbs.twimg.com/profile_images/965664638263267329/WxovMAia_400x400.jpg">
-                      <img class="mySlides" src="https://i.ytimg.com/vi/hPBuho_aoGA/maxresdefault_live.jpg">
-                      <img class="mySlides" src="http://media.comicbook.com/2018/07/fortnite-season-5-1121355.jpeg">
-                    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Competitive fortnite web app">
+    <link href='https://fonts.googleapis.com/css?family=Allan' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Metrophobic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="index.css" rel="stylesheet" type="text/css" />
 
-
+    <title>Home page</title>
+</head>
+<body>
+    <header>
+        <nav class="topnav" id="myTopnav">
+            <img src="../images/Freedom!_F.png" class="nav-logo">
+            <a href="/" class="active">Home</a>
+            <a href="/signup" class="active">Sign up</a>
+            <a href="/login-page">Login</a>
+            <a href="/settings">Pro-Settings</a>
+            <a href="/forums">Find Players</a>
+            <a href="javascript:void(0);" class="icon" onclick="responsiveNav()">
+                <i class="fa fa-bars"></i></a>
+        </nav>
+    </header>
+    <main role="main" class="home-main">
+        <div class="row">
+                <div class="col-12 banner">
+                    <h1 id="Main-header">Fortnite Society</h1>
                 </div>
-                <div class="col-6" id="signup_form">
-                        <form role="form" action="/api/users" method="post">
-                            <fieldset name="contact-info">
-                                <legend id="App">Fortnite Society<P>
-                                    sign up to find other players
-                                </P> </legend>
-
-                                <label for="username">username</label>
-                                <input name="username"placeholder="Jimmer fer" id="userName" type="text">
-
-                                <label for="userPassword">Password</label>
-                                <input name="password"placeholder="1234passw0rd" id="userPassword" type="password">
-
-                                <button id="signup_button" type='submit'>Sign up</button>
-
-                            </fieldset>
-
-
-                            <footer role="contentinfo" class="footer">
-                                <p>Already have an account? <a href="/login">Log in</a></p>
-                            </footer>
-                        </form>
-
-                </div>
+        </div>
+        <div class="row">
+            <div class='col-6 home-col-6' >
+                <h4 class='result-header'>2019 FORTNITE WORLD CUP | ESPORTS ANNOUNCEMENT</h4>
+                <a href="https://youtu.be/XSt6XVKPG6E?t=14" class="fa fa-youtube-play" style="font-size:48px;color:red"></a>
+                <a href='https://youtu.be/XSt6XVKPG6E?t=14' class='video' id='https://youtu.be/XSt6XVKPG6E?t=14'>
+                    <img src='https://i.ytimg.com/vi/XSt6XVKPG6E/mqdefault.jpg'>
+                </a>
             </div>
-        </main>
-        <script >
-            var myIndex = 0;
-            carousel();
+            <div class="col-6 motivation-container" >
+                <h4 class="result-header">Motivation</h4>
+                <p>Fortnite is the most popular game at the moment and the eSport offering the most prize pool at 100 million dollars for the 2018 year. I beleive it will be the future of eSports; whether it be Fortnite
+                    or just Epic games showing everyone how developers can both grow their game and eSports.
+                </p>
 
-            function carousel() {
+            </div>
+        </div>
 
 
+            <div role="region" id="js-news-results" class="row" >
+                <h1 >Competetive News Articles</h1>
+            </div>
 
-                var i;
-                var x = document.getElementsByClassName("mySlides");
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
-                }
-                myIndex++;
-                if (myIndex > x.length) {myIndex = 1}
-                x[myIndex-1].style.display = "block";
-                setTimeout(carousel, 2000); // Change image every 2 seconds
-            }
-        </script>
-    </body>
+    </main>
 
+    <script src="index.js"></script>
+
+</body>
 </html>
