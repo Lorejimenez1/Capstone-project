@@ -37,10 +37,8 @@ function displayNews(data) {
 function getAndDisplayNews() {
     getRecentNews(displayNews);
 }
-/*
-var myIndex = 0;
-carousel();
 
+let myIndex = 0;
 function carousel() {
 
 
@@ -55,7 +53,7 @@ function carousel() {
     x[myIndex-1].style.display = "block";
     setTimeout(carousel, 2000); // Change image every 2 seconds
 }
-*/
+
 
 function responsiveNav() {
     var x = document.getElementById("myTopnav");
@@ -135,7 +133,7 @@ function displayPosts(data) {
             <p class="user-name" id ="js-username-p">Post by ${data[index].username}</p>`)
             if( currentUser === `${data[index].username}`) {
             console.log('adding delete button')
-                $(`#js-forum-${data[index].username}-${data[index].id}`).append(`<button class="js-shopping-item-delete">
+                $(`#js-forum-${data[index].username}-${data[index].id}`).append(`<button class="js-item-delete">
             <span class="button-label">delete</span></button><p id="objID">${data[index].id}</p>`)
 
             }
@@ -178,4 +176,5 @@ $(function() {
     getAndDisplayPlayerPosts();
     handlePlayerPostAdd();
     handleDeletePost();
+    carousel();
 });

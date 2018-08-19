@@ -27,7 +27,7 @@
         <main>
             <div class="row">
                 <div class="col-6" id="Welcome-container">
-                    <h1>Welcome to Fortnite Prime</h1>
+                    <h1>Welcome to Fortnite Society</h1>
                     
                       <img class="mySlides" src="https://pbs.twimg.com/profile_images/965664638263267329/WxovMAia_400x400.jpg">
                       <img class="mySlides" src="https://i.ytimg.com/vi/hPBuho_aoGA/maxresdefault_live.jpg">
@@ -62,25 +62,7 @@
                 </div>
             </div>
         </main>
-        <script >
-            var myIndex = 0;
-            carousel();
-
-            function carousel() {
-
-
-
-                var i;
-                var x = document.getElementsByClassName("mySlides");
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
-                }
-                myIndex++;
-                if (myIndex > x.length) {myIndex = 1}
-                x[myIndex-1].style.display = "block";
-                setTimeout(carousel, 2000); // Change image every 2 seconds
-            }
-        </script>
+         <script src="index.js"></script>
     </body>
 
 </html>

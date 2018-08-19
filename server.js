@@ -7,8 +7,6 @@ const flash = require('connect-flash');
 
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-
-
  require('./auth/passport')(passport);
 
 const package = require('./package.json');
@@ -17,8 +15,6 @@ const newsRouter = require('./routers/newsRouter');
 const settingsRouter = require('./routers/settingsRouter');
 const userRouter = require('./routers/usersRouter');
 const playerPostsRouter = require('./routers/playerPostsRouter')
-
-
 
 mongoose.Promise = global.Promise;
 const app = express();
@@ -59,7 +55,6 @@ app.get("/about", (req, res) => {
     res.sendFile(__dirname + "/Public/about.html");
 });
 app.get("/forums", isLoggedIn, (req, res) => {
-
     res.render("forums.html", {
         user: req.user // get the user out of session and pass to template
     });
@@ -105,6 +100,7 @@ app.use('api/login', userRouter);
 app.use('*', (req,res)=> {
     res.send('user not found. Please sign up or re-sign in.');
 });
+
 let server;
 
 function runServer(databaseUrl, port = PORT) {

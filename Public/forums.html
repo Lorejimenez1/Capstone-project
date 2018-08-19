@@ -4,27 +4,28 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <meta name="description" content="Competitive fortnite web app">
-        <link href="https://fonts.googleapis.com/css?family=Metrophobic" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Hanalei+Fill|Jockey+One|Merienda" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link href="index.css" rel="stylesheet" type="text/css" />
         <title>New</title>
     </head>
-    <body>
+    <body class="settings-body">
         <header>
             <nav class="topnav" id="myTopnav">
-                <img src="https://pbs.twimg.com/media/DS-XbyJW0AAX_Dk.png" class="nav-logo">
+                <img src="../images/Freedom!_F.png" class="nav-logo">
                 <a href="/" class="active">Home</a>
-                <a href="/news">News</a>
-                <a href="/settings">Pro-settings</a>
+                <a href="/signup" class="active">Sign up</a>
+                <a href="/login-page">Login</a>
+                <a href="/settings">Pro-Settings</a>
                 <a href="/forums">Find Players</a>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <a href="javascript:void(0);" class="icon" onclick="responsiveNav()">
                     <i class="fa fa-bars"></i></a>
-
             </nav>
         </header>
-        <main class="home-main" >
+        <main >
+            <h1 class="welcome-user">Welcome <%= user.username %></h1>
             <section class="row">
-
                 <form id="js-player-entry-form">
                     <label for="js-new-player"><p id="new-author"><%= user.username %></p>>Make a post </label>
                     <input type="text" name="content" id="js-new-player" placeholder="Welcome yourself to the community for all players to see">
