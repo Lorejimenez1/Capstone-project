@@ -42,7 +42,7 @@ app.use(function(req, res, next){
     next();
 });
 
-app.set('views', __dirname + '/public');
+app.set('views', __dirname + '/Public');
 app.engine('html', require('ejs').renderFile);
 
 app.use(session({ secret: 'ilovefortnitetoken'})); // session secret
@@ -50,13 +50,13 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash());
 
-app.use(express.static('public'));
+app.use(express.static('Public'));
 
 app.get("/", (req, res) => {
- res.sendFile(__dirname + "/public/index.html");
+ res.sendFile(__dirname + "/Public/index.html");
 });
 app.get("/about", (req, res) => {
-    res.sendFile(__dirname + "/public/about.html");
+    res.sendFile(__dirname + "/Public/about.html");
 });
 app.get("/forums", isLoggedIn, (req, res) => {
 
@@ -65,13 +65,13 @@ app.get("/forums", isLoggedIn, (req, res) => {
     });
 });
 app.get("/signup", (req, res) => {
-    res.sendFile(__dirname + "/public/signup.html");
+    res.sendFile(__dirname + "/Public/signup.html");
 })
 app.get("/settings", (req, res) => {
-    res.sendFile(__dirname + "/public/pro-settings.html");
+    res.sendFile(__dirname + "/Public/pro-settings.html");
 });
 app.get("/login-page", (req, res) => {
-    res.sendFile(__dirname + "/public/login.html")
+    res.sendFile(__dirname + "/Public/login.html")
 })
 
 app.get('/profile', (req, res) => {
