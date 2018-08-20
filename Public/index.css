@@ -448,9 +448,7 @@ table.blueTable tfoot .links a{
 
 }
 .home-main {
-    opacity: .96;
-    margin-left: 150px;
-    margin-right: 150px;
+    opacity: .9;
     background: black;
     padding-bottom: 100px;
 }
