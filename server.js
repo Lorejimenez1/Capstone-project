@@ -103,9 +103,9 @@ app.use('*', (req,res)=> {
 
 let server;
 
-function runServer(databaseUrl, port = PORT) {
+function runServer( port = PORT) {
     return new Promise((resolve, reject) => {
-        mongoose.connect(databaseUrl, err => {
+        mongoose.connect('mongodb://localhost/fortniteDB', err => {
             if (err) {
                 return reject(err);
             }

@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-const {Settings} = require('../models/settingsModel')
+const {Settings} = require('../models/settingsModel');
 
 router.get('/', (req, res) => {
     Settings.find()
@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const requiredFields = ['player', 'mouse', 'sensitivity', 'dpi', 'ads', 'scopeSensitivity', 'keyboard'];
+    const requiredFields = ['player', 'mouse', 'sensitivity', 'dpi', 'ads', 'ScopeSensitivity', 'keyboard'];
     for (let i = 0; i < requiredFields.length; i++) {
         const field = requiredFields[i];
         if (!(field in req.body)) {
@@ -45,28 +45,7 @@ router.post('/', (req, res) => {
         });
 
 });
-/*
-router.put('/:id', (req, res) => {
-  if(!(req.params.id === req.body.id)) {
-    res.status(400).json({
-      error: 'Request path id and request body id values must match'
-    });
-  }
 
-  const updated = {};
-  const updateableFields = ['player', 'mouse', 'sensitivity', 'dpi', 'ads', 'ScopeSensitivity', 'keyboard'];
-  updateableFields.forEach(field => {
-    if (field in req.body) {
-      updated[field] = req.body[field];
-    }
-  });
-
-  Settings
-    .findByIdAndUpdate(req.params.id, { $set: updated }, { new: true })
-    .then(updatedPost => res.status(204).end())
-    .catch(err => res.status(500).json({ message: 'Something went wrong' }));
-});
-*/
 router.put('/:id', (req, res)=>{
     // ensure that the id in the request path and the one in request body match
     if(!(req.params.id === req.body.id)){
