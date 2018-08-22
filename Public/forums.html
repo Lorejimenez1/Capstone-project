@@ -7,12 +7,13 @@
         <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Hanalei+Fill|Jockey+One|Merienda" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link href="index.css" rel="stylesheet" type="text/css" />
-        <title>New</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Forums page</title>
     </head>
     <body class="settings-body">
         <header>
-            <nav class="topnav" id="myTopnav">
+            <nav  role="navigation" class="topnav" id="myTopnav">
                 <img src="../images/Freedom!_F.png" class="nav-logo">
                 <a href="/" class="active">Home</a>
                 <a href="/signup" class="active">Sign up</a>
@@ -23,23 +24,23 @@
                     <i class="fa fa-bars"></i></a>
             </nav>
         </header>
-        <main >
+        <main role="main">
             <h1 class="welcome-user">Welcome <%= user.username %></h1>
-            <section class="row">
-                <form id="js-player-entry-form">
+            <section class="row white" >
+                <form id="js-player-entry-form" role="search">
                     <label for="js-new-player"><p id="new-author"><%= user.username %></p>>Make a post </label>
                     <input type="text" name="content" id="js-new-player" placeholder="Welcome yourself to the community for all players to see">
                     <button type="submit">Add post</button>
                 </form>
 
             </section>
-            <div class = "row js-post-results">
+            <div class ="row js-post-results white" aria-live="assertive" hidden>
 
             </div>
         </main>
 
 
-        <script src="index.js"></script>
+        <script type="text/javascript" src="scripts/index.js"></script>
 
     </body>
 </html>

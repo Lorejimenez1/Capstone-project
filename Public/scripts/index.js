@@ -3,21 +3,16 @@ const FORUMS_URL = "/player-posts";
 const SETTINGS_URL = "/pro-settings";
 let currentUser = $('#new-author').html();
 
-
 function getRecentNews(callbackFn) {
     setTimeout(function(){$.getJSON(NEWS_URL, callbackFn)}, 100);
-
 }
 
-// this function stays the same when we connect
-// to real API later
 function displayNews(data) {
-
     for (index in data) {
        $('#js-news-results').append(
         `  	<div class=col-4>
   		<div class="card w3-hover-grayscale">
-  			<img class="card-image" alt=""
+  			<img class="card-image" alt="colorful cartoonish characters from the video game fortnite"
   			src="${data[index].imageURL}">
   			<div class="card-content">
   				<h3><a href="${data[index].url}" target="_blank">${data[index].title}</a>
@@ -28,32 +23,11 @@ function displayNews(data) {
   	</div>
 `);
     }
-
-
 }
 
-// this function can stay the same even when we
-// are connecting to real API
 function getAndDisplayNews() {
     getRecentNews(displayNews);
 }
-
-let myIndex = 0;
-function carousel() {
-
-
-
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}
-    x[myIndex-1].style.display = "block";
-    setTimeout(carousel, 2000); // Change image every 2 seconds
-}
-
 
 function responsiveNav() {
     var x = document.getElementById("myTopnav");
@@ -128,6 +102,7 @@ function getPosts(callbackFn) {
 }
 function displayPosts(data) {
     $('.js-post-results').empty();
+    $('.js-post-results').prop('hidden', false);
     for (index in data) {
         $('.js-post-results').append( `<div class="col-12 js-forum" id="js-forum-${data[index].username}-${data[index].id}"><p class="p-player-post"><span class="player-post js-player-post">${data[index].content}</span></p>
             <p class="user-name" id ="js-username-p">Post by ${data[index].username}</p>`)
@@ -139,10 +114,6 @@ function displayPosts(data) {
             }
 
         }
-
-
-
-
 
 }
 function getAndDisplayPlayerPosts() {
@@ -176,5 +147,4 @@ $(function() {
     getAndDisplayPlayerPosts();
     handlePlayerPostAdd();
     handleDeletePost();
-    carousel();
 });

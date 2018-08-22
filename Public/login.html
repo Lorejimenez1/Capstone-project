@@ -7,13 +7,12 @@
     <link href="https://fonts.googleapis.com/css?family=Metrophobic" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="index.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>Login page</title>
 </head>
 <body>
-    <header>
-        <nav class="topnav" id="myTopnav">
+    <header role="banner">
+        <nav role="navigation" class="topnav" id="myTopnav">
             <img src="../images/Freedom!_F.png" class="nav-logo">
             <a href="/" class="active">Home</a>
             <a href="/signup" class="active">Sign up</a>
@@ -22,11 +21,10 @@
             <a href="/forums">Find Players</a>
             <a href="javascript:void(0);" class="icon" onclick="responsiveNav()">
               <i class="fa fa-bars"></i></a>
-
         </nav>
     </header>
-    <main role="main" >
-        <form  class="login-form" action="/api/users/login" method="post">
+    <main role="main">
+        <form  role="search" class="login-form" action="/api/users/login" method="post">
             <div class="imgcontainer">
                 <i class="fa fa-user-o" style="font-size:48px;color:red"></i>
             </div>
@@ -49,12 +47,7 @@
                 <span class="psw">Forgot <a href="#">password?</a></span>
             </div>
         </form>
-
-
-
     </main>
-
-<script src="index.js"></script>
-
+    <script type="text/javascript" src="scripts/index.js"></script>
 </body>
 </html>
