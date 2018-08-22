@@ -9,7 +9,7 @@ Fortnite is by far the most popular video game in the world right now.The develo
 #### For Pro player settings
 +	Visit Pro player settings to get the most up to date pro player peripherals like mouse keyborad and in game settings
 
-![SettingsPage](https://github.com/Lorejimenez1/Fortnite-Society/blob/master/Public/images/Settings.png)
+![SettingsPage](https://github.com/Lorejimenez1/Fortnite-Society/blob/master/Public/images/SettingsPage.png)
 
 
 #### Formus page
