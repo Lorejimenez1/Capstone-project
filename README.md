@@ -9,7 +9,7 @@ Fortnite is by far the most popular video game in the world right now.The develo
 #### For Pro player settings
 +	Visit Pro player settings to get the most up to date pro player peripherals like mouse keyborad and in game settings
 
-![SettingsPage](https://github.com/imhighyat/hungryHelpers/blob/master/Public/images/SettingsPage.png)
+![SettingsPage](https://github.com/Lorejimenez1/Fortnite-Society/blob/master/Public/images/Settings.png)
 
 
 #### Formus page
@@ -18,7 +18,7 @@ Fortnite is by far the most popular video game in the world right now.The develo
 + users can then delete any post they have made
 + Forums page assembles every post in chronological order
 
-![ForumsPage](https://github.com/imhighyat/hungryHelpers/blob/master/Public/images/New.png)
+![ForumsPage](https://github.com/Lorejimenez1/Fortnite-Society/blob/master/Public/images/New.png)
 
 ## Technology
 #### Front-End
