@@ -234,7 +234,7 @@ header::after {
     overflow: hidden;
     background-color: #333;
 }
-.topnav a, a:active, a:focus {
+.topnav a {
     float: left;
     display: block;
     color: #f2f2f2;
@@ -333,9 +333,7 @@ section.white {
     color: white;
 }
 table.blueTable {
-    font-family: 'Zilla Slab', serif;
-    font-family: 'Audiowide', cursive;
-    font-family: 'Allerta', sans-serif;
+    background-color: #F5F3F3;
     width: 100%;
     text-align: center;
     border-collapse: collapse;
@@ -345,7 +343,9 @@ table.blueTable td, table.blueTable th {
     padding: 5px 5px;
 }
 table.blueTable tbody td {
-    font-size: 13px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-size: 14px;
     color: #00020A;
 }
 table.blueTable tr:nth-child(even) {
