@@ -2,8 +2,11 @@
 
 A node express app created by lorenzo jimenez
 
+#Live Website
+https://polar-bayou-34222.herokuapp.com/
+
 # The Motivation
-Fortnite is by far the most popular video game in the world right now.The developer Epic Games are offering 100 million dollars in prize money for the eSports/competetive scene.There are already so many players making a career out of being the best at this video game.With the game growing as fast as it is comes more than 40 million people logging in everyday to play fortnite.As an avid casual and competive player i know there is a high demand to see what these professional players are using.I beleive Fortnite will continue to grow for years to come so i created an app for this community.
+Fortnite is by far the most popular video game in the world right now.The developer Epic Games are offering 100 million dollars in prize money for the eSports/competetive scene.There are already so many players making a career out of being the best at this video game.With the game growing as fast as it is comes more than 40 million people logging in everyday to play fortnite.As an avid casual and competive player i know there is a high demand to see what these professional players are using.I beleive Fortnite will continue to grow for years to come so i created an app for this community where i provide a forums page and up a detailed up to data data grid on pro player settings.
 
 ### How It Works
 #### For Pro player settings
