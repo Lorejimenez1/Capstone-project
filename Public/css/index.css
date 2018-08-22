@@ -333,8 +333,9 @@ section.white {
     color: white;
 }
 table.blueTable {
-    font-family: "Verdana", Geneva, sans-serif;
-    background-color: #F5F3F3;
+    font-family: 'Zilla Slab', serif;
+    font-family: 'Audiowide', cursive;
+    font-family: 'Allerta', sans-serif;
     width: 100%;
     text-align: center;
     border-collapse: collapse;
