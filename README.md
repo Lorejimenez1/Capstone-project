@@ -1,4 +1,4 @@
-# Fortnite Comp Community
+# Fortnite Society
 
 A node express app created by lorenzo jimenez
 
