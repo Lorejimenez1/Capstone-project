@@ -13,6 +13,7 @@ const proSettingsSchema = mongoose.Schema ({
 
 proSettingsSchema.methods.serialize = function () {
     return {
+        id: this._id,
         player: this.player,
         mouse: this.mouse,
         sensitivity: this.sensitivity,
